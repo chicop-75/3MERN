@@ -1,0 +1,25 @@
+.container{
+  display: flex !important;
+  justify-content: center !important;
+  flex-direction: column;
+  align-items: center !important;
+  height: 90vh !important;
+}
+.welcome {
+  font-weight: bolder;
+  font-size: 1.8rem;
+}
+
+.card {
+  width: 30%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
