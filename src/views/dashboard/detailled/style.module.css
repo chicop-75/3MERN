@@ -1,0 +1,45 @@
+.container {
+    margin: 0 !important;
+    width: 100% !important;
+    overflow: auto;
+    max-width: 100% !important;
+    gap: 30px !important;
+    justify-content: flex-start !important;
+    display: flex !important;
+    height: 93% !important;
+    padding: 100px 60px;
+}
+.citiesTitle {
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+.card {
+    min-width: 280px;
+    width: 30%;
+    border-radius: 30px !important;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-inline: 40px;
+}
+
+.card img {
+    transform: translateY(-60px);
+}
+
+.tempContainer {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-inline: 20px;
+    font-size: 3rem;
+    font-weight: 300;
+    margin: 40px 0;
+}
+
+.tempContainer p {
+    margin: 0;
+}
+

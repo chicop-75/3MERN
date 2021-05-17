@@ -1,40 +1,37 @@
 import React from "react";
-import {Home} from "./views/home/home"
+import Home from "./views/home/home"
+import Dashboard from "./views/dashboard/dashboard";
+import SignUp from "./views/createAccount/createAccount";
+
 import {
     BrowserRouter as Router,
     Switch,
-    Route,
+    Route, Redirect,
 } from "react-router-dom";
-import {SignUp} from "./views/createAccount/createAccount";
+import Details from "./views/dashboard/detailled/details";
 
 function App() {
     return (
         <Router>
             <Switch>
-                <Route path="/about">
-                    <About />
-                </Route>
-                <Route path="/signUp">
-                    <SignUp />
-                </Route>
-                <Route path="/users">
-                    <Users />
-                </Route>
-                <Route path="/">
-                    <Home />
-                </Route>
+                <Route path="/login" component={Home}/>
+                <Route path="/signUp" component={SignUp}/>
+                <PrivateRoute component={Dashboard} />
             </Switch>
         </Router>
   );
 }
 
 
-function About() {
-    return <h2>About</h2>;
-}
-
-function Users() {
-    return <h2>Users</h2>;
+function PrivateRoute ({component: Component, ...rest}) {
+    return (
+        <Route
+            {...rest}
+            render={(props) => window.sessionStorage.getItem("JWT") !== null
+                ? <Component {...props} />
+                : <Redirect to={{pathname: '/login', state: {from: props.location}}} />}
+        />
+    )
 }
 
 export default App;
